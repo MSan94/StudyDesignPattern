@@ -45,12 +45,13 @@ MVVM 구현을 위한 안드로이드 디자인패턴 공부 레파지토리 입
 data class UserData(
     var text : String
 )
-
-
+```
+```
 <controller>
 
 class MainActivity : AppCompatActivity() {
     private val button : Button by lazy { findViewById(R.id.button) }
+    private val button2 : Button by lazy { findViewById(R.id.button2) }
     lateinit var user : User
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +60,14 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             user = User("Hello")
             Toast.makeText(this,"값 : ${user.text}" , Toast.LENGTH_SHORT).show()
+            button.text = user.text
         }
+        button2.setOnClickListener {
+            user = User("goodbye")
+            Toast.makeText(this,"값 : ${user.text}" , Toast.LENGTH_SHORT).show()
+            button.text = user.text
+        }
+        
     }
 }
 
