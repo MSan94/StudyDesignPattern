@@ -1,5 +1,5 @@
 # StudyDesignPattern
-안드로이드 디자인패턴 공부 레파지토리 입니다. -> MVC, MVP, MVVM등..
+MVVM 구현을 위한 안드로이드 디자인패턴 공부 레파지토리 입니다. -> MVC, MVP, MVVM등..
 
 
 # 2021.04.23 - Web이 아닌 Android에서의 MVC 패턴
@@ -25,3 +25,28 @@
     - 사용자의 이벤트를 처리하는 부분
     - 모델이나 뷰에 대해 알아야 한다
     - 모델과 뷰의 변경을 모니터링 해야 한다.
+- 동작 순서
+  - 안드로이드에서는 View와 Controller가 함께 공존
+![image](https://user-images.githubusercontent.com/81352078/115830363-24183200-a44b-11eb-9844-417e4813ca69.png)
+  - 안드로이드에서는 Class하나에 MVC가 처리 가능한 구조로 만들어 진다.
+- 장점
+  - 개발 단축
+  - 코드 분석 용이
+- 단점
+  - 한 클래스의 코드 양 증가
+  - 유지보수의 어려움
+  - View와 Model의 결합도 상승
+  - 테스트 코드 작성의 어려움
+  - 복잡도 관리
+- 예제 코드
+```
+<model>
+
+data class UserData(
+    var text : String
+)
+
+
+
+
+```
