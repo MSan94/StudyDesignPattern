@@ -47,6 +47,21 @@ data class UserData(
 )
 
 
+<controller>
+
+class MainActivity : AppCompatActivity() {
+    private val button : Button by lazy { findViewById(R.id.button) }
+    lateinit var user : User
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        button.setOnClickListener {
+            user = User("Hello")
+            Toast.makeText(this,"값 : ${user.text}" , Toast.LENGTH_SHORT).show()
+        }
+    }
+}
 
 
 ```
